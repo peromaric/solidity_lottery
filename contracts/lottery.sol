@@ -27,6 +27,10 @@ contract Lottery {
 
     modifier restricted() { //prevents code duplicates
         require(msg.sender == manager);
-        _;
+        _; //solidity places particular function code here
+    }
+
+    function getPlayers() public view returns( address payable[] memory) {
+        return players;
     }
 }
