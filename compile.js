@@ -8,7 +8,7 @@ const source = fs.readFileSync(lotteryPath, 'utf-8');
 var input = {
     language: 'Solidity',
     sources: {
-        'practice.sol' : {
+        'lottery.sol' : {
             content: source
         }
     },
@@ -23,4 +23,4 @@ var input = {
   
   var output = JSON.parse(solc.compile(JSON.stringify(input)));
   
-  module.exports = output.contracts['practice.sol']['Inbox'];
+  module.exports = output.contracts['lottery.sol']['Lottery'];
