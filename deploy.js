@@ -13,7 +13,7 @@ const web3 = new Web3(provider);
 const deploy = async () => {
     const accounts = await web3.eth.getAccounts();
 
-    console.log(accounts[0]);
+    console.log(accounts[1]);
 
     const result = await new web3.eth.Contract(_interface).
     deploy({ data: _bytecode}).
