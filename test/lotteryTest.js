@@ -19,6 +19,10 @@ describe('Lottery Contract', () => {
         assert.ok(lottery.options.address);
     });
 
+    it('returns the manager', ( async () => {
+        const manager = await lottery.methods.manager().call();
+        console.log(manager, accounts[0]);
+    }));
     it('allows one accounts to enter', async () => {
         await lottery.methods.enter().send({
             from: accounts[0],
